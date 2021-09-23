@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.spacer {
+  height: 20px;
+}
+.main_app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main_app_content {
+  background-color: white;
+  padding: 15px;
+  min-width: 50%;
+  max-width: 300px;
+  min-height: 75%;
+  max-height: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.main_app_content_title {
+  text-align: center;
+}
+.beginDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttonDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.buttonGo {
+  width: 100%;
+  height: 50px;
+  margin: auto;
+}

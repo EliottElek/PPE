@@ -16,8 +16,8 @@
 .main_app_content {
   background-color: white;
   padding: 15px;
-  min-width: 50%;
-  max-width: 300px;
+  width: 90%;
+  max-width: 800px;
   min-height: 75%;
   max-height: 95%;
   margin: auto;

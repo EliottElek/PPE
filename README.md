@@ -1,8 +1,8 @@
 # PPE
-PPE demo made with ReactJS
+PPE demo made with ReactJS.
 ## About
 This app is a simple demonstration on an application called PlanYourMoment.
-This application's goal is to simplify people's life in their reseachres for night or day activities. 
+This application's goal is to simplify people's life in their researches for night or day activities. 
 
 ### `yarn start`
 

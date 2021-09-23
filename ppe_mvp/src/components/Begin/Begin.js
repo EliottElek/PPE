@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const Begin = () => {
   return (
-    <div className ="beginDiv">
-      <Typography>
+    <div className="beginDiv">
+      <Typography style={{ textAlign: "center" }}>
         Prêt à vous amuser ? Trouvez une activité près de chez vous !
       </Typography>
       <div className="spacer"></div>
-      <Button component = {Link} to = {"/home"} variant="contained" size="large">
+      <Button component={Link} to={"/home"} variant="contained" size="large">
         C'est parti !
       </Button>
     </div>

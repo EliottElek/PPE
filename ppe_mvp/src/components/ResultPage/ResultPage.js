@@ -14,12 +14,15 @@ import Paper from "@mui/material/Paper";
 import CircularProgress from "@mui/material/CircularProgress";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
+import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
+import TheatersIcon from '@mui/icons-material/Theaters';
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function createData(activities, budget, duration, details) {
   return {
-    activities,
+    activities:activities,
     budget,
     duration,
     details: details,
@@ -43,7 +46,22 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          {row.activities}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              alignItems: "center",
+            }}
+          >
+            {row.activities.act}
+           {row.activities.type === "restaurant" &&
+            (<RestaurantIcon style={{ width: "15px" }} />)}
+            {row.activities.type === "théatre" &&
+            (<TheaterComedyIcon style={{ width: "15px" }} />)}
+             {row.activities.type === "cinéma" &&
+            (<TheatersIcon style={{ width: "15px" }} />)}
+          </div>
         </TableCell>
         <TableCell align="right">{row.budget}</TableCell>
         <TableCell align="right">{row.duration}</TableCell>
@@ -52,7 +70,12 @@ function Row(props) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
+              <Typography
+                variant="h6"
+                style={{ fontSize: "15px", fontWeight: "bold" }}
+                gutterBottom
+                component="div"
+              >
                 Détails
               </Typography>
               <Table size="small" aria-label="purchases">
@@ -67,8 +90,22 @@ function Row(props) {
                 <TableBody>
                   {row.details.map((detailsRow) => (
                     <TableRow key={detailsRow.activity}>
-                      <TableCell component="th" scope="row">
-                        {detailsRow.activity}
+                      <TableCell
+                        className="activityRestaurant"
+                        component="th"
+                        scope="row"
+                      >
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "flex-start",
+                            alignItems: "center",
+                          }}
+                        >
+                          {detailsRow.activity}
+                          <RestaurantIcon style={{ width: "15px" }} />
+                        </div>
                       </TableCell>
                       <TableCell align="right">
                         {detailsRow.transports}
@@ -109,7 +146,7 @@ Row.propTypes = {
 };
 
 const rows = [
-  createData("Les Misérables", 65, 3, [
+  createData({act: "Les Misérables", type: "théatre"}, 65, 3, [
     {
       activity: "Les Misérables, Théatre de Paris ",
       transports: "15 min, 1 changement",
@@ -121,7 +158,7 @@ const rows = [
       budgetPerPerson: 30,
     },
   ]),
-  createData("Tenet", 50, 3, [
+  createData({act:"Tenet", type: "cinéma"}, 50, 3, [
     {
       activity: "Tenet, Cinéma Pathé Place de Clichy ",
       transports: "15 min, 1 changement",
@@ -133,7 +170,7 @@ const rows = [
       budgetPerPerson: 18,
     },
   ]),
-  createData("L'embarras du choix", 85, 3.50, [
+  createData({act:"L'embarras du choix", type: "théatre"}, 85, 3.5, [
     {
       activity: "L'embarras du choix,  Théatre des Mathurins ",
       transports: "20 min",

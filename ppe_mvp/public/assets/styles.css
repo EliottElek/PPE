@@ -50,3 +50,23 @@
   height: 50px;
   margin: auto;
 }
+.main_app_content_inputs{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+.backButton{
+  width:100%;
+  margin-top: 25px;
+}
+.circularProgress{
+  display: flex;
+  height:100px;
+  width:100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

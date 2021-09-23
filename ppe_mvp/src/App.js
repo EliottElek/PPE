@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Typography from "@mui/material/Typography";
 import Home from "./components/Home/Home";
-import SearchPage from "./components/SearchPage/SearchPage";
+import ResultPage from "./components/ResultPage/ResultPage";
 import AppBar from "./components/AppBar/AppBar";
 import Begin from "./components/Begin/Begin";
 
@@ -12,14 +11,6 @@ function App() {
 
       <div className="main_app">
         <div className="main_app_content">
-          <div className="main_app_content_title">
-            <Typography color="primary" variant="h4">
-              Planifiez votre moment !
-            </Typography>
-            <Typography color="primary" variant="h6">
-              PlanYourMoment t'aide à trouver une activité à faire pour votre journée, soirée...
-            </Typography>
-          </div>
           <div className="main_app_content_inputs">
             <Router>
               <Switch>
@@ -29,8 +20,8 @@ function App() {
                 <Route exact path="/home">
                   <Home />
                 </Route>
-                <Route exact path="/search">
-                  <SearchPage />
+                <Route exact path="/result">
+                  <ResultPage />
                 </Route>
               </Switch>
             </Router>

@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 import ModalBox from "../ModalBox/ModalBox";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [open, setOpen] = useState(false);
@@ -76,7 +77,7 @@ const Home = () => {
         <div className="spacer"></div>
         <Box sx={{ width: 300 }}>
           <Typography id="input-slider" gutterBottom>
-            Budget
+            Budget (par personne)
           </Typography>
           <Slider
             aria-label="Custom marks"
@@ -94,6 +95,9 @@ const Home = () => {
   };
   return (
     <div>
+      <Typography variant="h5" style={{ marginBottom: "12px" }} color="primary">
+        Prêt à vous amuser ?
+      </Typography>
       <ModalBox handleClose={handleClose} open={open}>
         {showOptions()}
       </ModalBox>
@@ -158,6 +162,8 @@ const Home = () => {
           variant="contained"
           size="large"
           className="buttonGo"
+          component={Link}
+          to={"/result"}
         >
           C'est parti !
         </Button>

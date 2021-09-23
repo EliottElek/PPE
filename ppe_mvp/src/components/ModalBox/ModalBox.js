@@ -10,6 +10,11 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
+  "@media (max-width: 900px)": {
+    width: "70%",
+    marginTop: "55px",
+    height: "60%",
+  },
   maxHeight: "80%",
   minHeight: "50%",
   overflowY: "auto",
